@@ -1,0 +1,426 @@
+body {
+  font-family: 'Arial', sans-serif; /* Sans-serif font */
+  margin: 0;
+  padding: 0;
+  background-color: #333; /* Light gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-size: 16px;
+  color: #000000; /* Darker text */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgb(51, 51, 51, 0.2); /* Shadow for container */
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #e9ecef;
+}
+
+#search-input {
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: px;
+  box-sizing: border-box;
+  background-color: #f0f0f0; /* Lighter background for input */
+  color: #333; /* Darker text */
+}
+
+#results-container {
+  display: flex;
+  min-height: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+  row-gap: 10px;
+  margin-top: 40px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column; /* Arrange logo and platform name vertically */
+  align-items: center; /* Align the logo to the left side */
+  background-color: #444; 
+  padding: 15px;
+  gap: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  width: 30%; /* Adjusted width for results */
+  height: 100px; /* Adjusted height for results */
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  &:hover { /* Use the :hover pseudo-class */
+    background-color: #333; 
+  }
+}
+
+.platform-logo {
+  width: 30px; /* Reduced logo size */
+  height: 30px;
+  margin-bottom: 10px; /* Add some spacing between logo and name */
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.platform-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 80px; /* Increased header height */
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ff6347;
+  transition: transform 0.3s ease;
+}
+
+.menu-icon.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+#add-website-btn {
+  background-color: #FF6347; /* Gold */
+  color: #333; /* Darker text */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add hover effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+#add-website-btn:hover {
+  background-color: #FF6347; /* Orange */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+}
+
+/* Side Menu Styles */
+#side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: none;
+  transition: transform 0.3s ease;
+}
+
+#side-menu.show {
+  display: flex;
+  transform: translateX(0);
+}
+
+#website-selection {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 400px;
+  position: relative; /* To position the close button */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  max-height: 80vh; /* Adjust the maximum height as needed */
+  border: 1px solid #080808;
+  background-color: #f9f9f9; 
+}
+
+.website-category {
+  margin-bottom: 15px;
+}
+
+.website-category h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.website-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  border-right: 1px solid #0d0c0c;
+  border-left: 1px solid #0d0c0c;
+  border-top: 4px solid #ff6432;
+  border-bottom: 1px solid #0d0c0c;
+  background-color: #ffffff; /* Optional: For a lighter background */
+  border-radius: 15px; /* Optional: For rounded corners */
+}
+
+.website-checkbox {
+  display: flex;
+  align-items: center;
+  margin-right: 15px; /* Adjust spacing as needed */
+}
+
+.website-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.website-checkbox label {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Close Menu Button */
+#close-menu-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff6347; /* Red background */
+  color: #000000;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add hover effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border: 2px solid #ff6432;
+  background-color: #f9f9f9; 
+}
+
+#close-menu-btn:hover {
+  background-color: #ff6347; /* Darker red on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+}
+
+.delete-btn {
+  background-color: #aaa7a7; 
+  color: #ffffff;
+  padding: 5px 10px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; 
+  transition: background-color 0.3s ease; /* Add hover effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.delete-btn:hover {
+  background-color: #c62828; /* Darker red on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+}
+
+/* Category Buttons */
+#category-buttons {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  margin-bottom: 30px; /* Add some spacing */
+  padding: 5px 5px; /* Add some padding */
+  white-space: nowrap;
+  scrollbar-width: none; /* Remove scrollbar */
+}
+
+#category-buttons::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+#category-buttons {
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.category-button {
+  background-color: #444; /* Light gray background */
+  color: #fff; /* Darker text */
+  padding: 10px 15px; /* Adjust padding as needed */
+  border: 1.5px solid #ff6432;
+  border-radius: 40px; /* Make it circular */
+  margin: 0 5px; /* Add some spacing between buttons */
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover transitions */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  font-size: 0.9rem; /* Adjust font size as needed */
+}
+
+.category-button:hover {
+  transform: translateY(-3px); /* Slight lift on hover */
+  box-shadow: 0 4px 10px rgb(255, 100, 50, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Search Bar Styling */
+.search-container {
+  display: flex;
+  height: 50px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #444; /* White background */
+  padding: 10px 10px;
+  border-radius: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+#search-input {
+  width: 100%; /* Adjust the width as needed */
+  align-iteams: centre;
+  height: 50px;
+  padding: 20px 15px;
+  border: none;
+  border-radius: 40px;
+  background-color: #f0f0f0;
+  font-size: 1rem;
+}
+
+#search-button {
+  background-color: #ff6432; /* Google blue */
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Category styling */
+.category-container {
+  margin-bottom: 20px;
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Style for the container of results within each category */
+.category-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.app-info { /* New div for app name and description */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align the text to the right */
+}
+
+.app-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e9ecef;
+  margin-bottom: 10px;
+}
+
+.app-description {
+  font-size: 0.9rem;
+  color: #e9ecef;
+  margin-bottom: 10px;
+}
+
+#site-search {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+#site-search:focus {
+  border-color: #007bff;
+}
+
+.rename-category-btn {
+  background-color: #ffc107;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.rename-category-btn:hover {
+  background-color: #e0a800;
+  transform: scale(1.1);
+}
+
+#add-category-btn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#add-category-btn:hover {
+  background-color: #218838;
+  transform: scale(1.1);
+}
+
+.drag-handle {
+  cursor: move; /* Change the cursor to indicate that the element can be dragged */
+  padding: 5px 15px; /* Add some padding for better grip */
+  width: 20px;
+  background-color: #ffffff; /* Light gray background for visibility */
+  border: 0px solid #ffffff; /* Border to distinguish the handle */
+  border-radius: 3px; /* Slightly round the corners */
+  display: inline-block; /* Ensure the handle is inline with other elements */
+  margin-right: 10px; /* Add some space to the right of the handle */
+}
+
+.drag-handle:hover {
+  background-color: #fff; /* Darken the background on hover */
+}

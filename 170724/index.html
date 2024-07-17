@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="app-info">
+        <h1 class="app-name">Multi-Search Prototype</h1>
+        <p class="app-description">Search across multiple platforms ease.</p>
+      </div>
+      <button id="add-website-btn">+</button>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search across platforms...">
+      <button id="search-button">Search</button>
+      <div id="search-history" class="hidden"></div> <!-- Add this line -->
+    </div>
+
+    <div id="category-buttons">
+    </div>
+    <div id="results-container">
+      <!-- Results will be displayed here -->
+      <div class="category-container">
+        <h2>Search Engines</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>Social Media</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>Shopping</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>Education</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>News</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>Entertainment</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>Travel</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>Other</h2> <div class="category-results"></div> </div>
+      <div class="category-container">
+        <h2>Movies</h2> <div class="category-results"></div> </div>
+      <!-- Add more categories as needed -->
+    </div>
+    <div id="side-menu">
+      <div id="website-selection">
+        <!-- Website selection menu will go here -->
+      </div>
+
+      <button id="close-menu-btn">Back</button>  <!-- Back button -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script> 
+  <script src="script.js"></script>
+</body>
+</html>
